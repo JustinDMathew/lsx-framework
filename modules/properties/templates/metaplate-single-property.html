@@ -1,0 +1,351 @@
+
+<div class="property-intro-meta">
+	{{#if logo}}
+		<div class="property-logo intro-meta-item">
+			<img src="{{logo}}">
+		</div>
+	{{/if}}
+
+	<div class="property-icons">
+		{{#if tripadvisor_code}}
+			<div class="property-icon intro-meta-item">
+				{{{tripadvisor_code}}}
+			</div>
+		{{/if}}
+	</div>
+
+	<div class="property-meta-section" style="margin-bottom: 0;">
+		<div class="row">
+			{{#if country}}<div class="col-sm-4">Country: <strong>{{country}}</strong></div>{{/if}}
+			{{#if city}}<div class="col-sm-4">City: <strong>{{city}}</strong></div>{{/if}}
+			{{#if region}}<div class="col-sm-4">Region: <strong>{{region}}</strong></div>{{/if}}
+		</div>
+		
+		<div class="row">
+			{{#if area}}<div class="col-sm-4">Area: <strong>{{area}}</strong></div>{{/if}}
+			{{#if province}}<div class="col-sm-4">Province: <strong>{{province}}</strong></div>{{/if}}
+			{{#if suburb}}<div class="col-sm-4">Suburb: <strong>{{suburb}}</strong></div>{{/if}}
+		</div>
+	</div>
+</div>
+
+
+
+<div class="property-info">
+	<p class="property-excerpt">{{{post_content}}}</p>
+</div>
+
+<div class="property-meta-section">
+	<div class="row">
+		<div class="col-md-4">Campsite Information</div>
+		<div class="col-md-8">
+			{{#if total_sites_available}}<div class="col-md-12 limited_items item_key_{{@index}}">Total sites available: <strong>{{total_sites_available}}</strong></div>{{/if}}
+			{{#if people_allowed_per_site}}<div class="col-md-12 limited_items item_key_{{@index}}">People allowed per site: <strong>{{people_allowed_per_site}}</strong></div>{{/if}}
+			{{#if what_type_of_cover_does_the_campsite_have___mark_with_a_____where_applicable_or_describe_under__other__}}<div class="col-md-12 limited_items item_key_{{@index}}">Types of Cover at the Campsite: <strong>{{what_type_of_cover_does_the_campsite_have___mark_with_a_____where_applicable_or_describe_under__other__}}</strong></div>{{/if}}
+			{{#if do_the_campsites_have_shade___mark_with_a__yes__the_best_description_}}<div class="col-md-12 limited_items item_key_{{@index}}">Shade: <strong>{{do_the_campsites_have_shade___mark_with_a__yes__the_best_description_}}</strong></div>{{/if}}
+			{{#if does_the_campsite_have_power_}}<div class="col-md-12 limited_items item_key_{{@index}}">Does the campsite have power?: <strong>{{does_the_campsite_have_power_}}</strong></div>{{/if}}
+			{{#if mark_with_a_____where_applicable_}}<div class="col-md-12 limited_items item_key_{{@index}}">Type(s) of Power: </strong></div>{{/if}}
+			{{#if power_times_}}<div class="col-md-12 limited_items item_key_{{@index}}">Power Times: <strong>{{power_times_}}</strong></div>{{/if}}
+			{{#if describe_the_campsite_security__if_applicable__}}<div class="col-md-12 limited_items item_key_{{@index}}">Campsite Security: <strong>{{describe_the_campsite_security__if_applicable__}}</strong></div>{{/if}}
+			{{#if attractions_in_the_area___within_a_radius_of_40km_}}<div class="col-md-12 limited_items item_key_{{@index}}">Attractions in the area: <strong>{{attractions_in_the_area___within_a_radius_of_40km_}}</strong></div>{{/if}}
+		</div>
+	</div>
+</div>
+
+<div class="property-meta-section">
+	<div class="row">
+		<div class="col-md-4">Accessibility</div>
+		<div class="col-md-8">
+			{{#if what_type_of_camping_is_allowed___mark_with_a_____what_is_applicable_}}<div class="col-md-12 limited_items item_key_{{@index}}">Applicable Type(s) of Camping: <strong>{{what_type_of_camping_is_allowed___mark_with_a_____what_is_applicable_}}</strong></div>{{/if}}
+			{{#if with_what_type_of_road_do_you_access_the_campsite___mark_with_a_____where_applicable_}}<div class="col-md-12 limited_items item_key_{{@index}}">Road Type(s) to Access the Campsite: <strong>{{with_what_type_of_road_do_you_access_the_campsite___mark_with_a_____where_applicable_}}</strong></div>{{/if}}
+			{{#if what_type_of_vehicle_can_reach_the_campsite___mark_with_a_____where_applicable_}}<div class="col-md-12 limited_items item_key_{{@index}}">Vehicle Type(s) to Access Campsite: <strong>{{what_type_of_vehicle_can_reach_the_campsite___mark_with_a_____where_applicable_}}</strong></div>{{/if}}
+			{{#if which_of_the_following_vehicles_can_be_towed_in___mark_with_a_____where_applicable_}}<div class="col-md-12 limited_items item_key_{{@index}}">Vehicles Type(s) which can be Towed into the Campsite: <strong>{{which_of_the_following_vehicles_can_be_towed_in___mark_with_a_____where_applicable_}}</strong></div>{{/if}}
+		</div>
+	</div>
+</div>
+
+<div class="property-meta-section">
+	<div class="row">
+		<div class="col-md-4">General Contact Details</div>
+		<div class="col-md-8">
+			{{#if front_desk}}<div class="col-md-12">Front Desk: <strong><a target="_blank" href="tel:{{front_desk}}">{{front_desk}}</a></strong></div>{{/if}}
+			{{#if contact_person}}<div class="col-md-12">Contact Person: <strong>{{contact_person}}</strong></div>{{/if}}
+			{{#if contact_email}}<div class="col-md-12">Contact Email: <strong><a target="_blank" href="mailto:{{contact_email}}">{{contact_email}}</a></strong></div>{{/if}}
+			{{#if website_address}}<div class="col-md-12">Website Address: <strong><a target="_blank" href="">{{website_address}}</a></strong></div>{{/if}}
+			{{#if telephone_number}}<div class="col-md-12">Telephone Number: <strong><a target="_blank" href="tel:{{telephone_number}}">{{telephone_number}}</a></strong></div>{{/if}}
+			{{#if fax_number}}<div class="col-md-12">Fax Number: <strong>{{fax_number}}</strong></div>{{/if}}
+			{{#if cell_number}}<div class="col-md-12">Cell Number: <strong><a target="_blank" href="tel:{{cell_number}}">{{cell_number}}</a></strong></div>{{/if}}
+			{{#if address}}<div class="col-md-12">Physical Address: <strong>{{address}}</strong></div>{{/if}}
+			{{#if postal_address}}<div class="col-md-12">Postal Address: <strong>{{postal_address}}</strong></div>{{/if}}
+		</div>
+	</div>
+</div>
+
+<div class="property-meta-section">
+	<div class="row">
+		<div class="col-md-4">Bookings/Reservations Details</div>
+		<div class="col-md-8">	
+			{{#if telephone_number}}<div class="col-md-12">Telephone Number: <strong><a target="_blank" href="tel:{{telephone_number}}">{{telephone_number}}</a></strong></div>{{/if}}
+			{{#if bookings_email}}<div class="col-md-12">Bookings Email: <strong><a target="_blank" href="mailto:{{booking_email}}">{{bookings_email}}</a></strong></div>{{/if}}
+			{{#if skype}}<div class="col-md-12">Skype: <strong><a target="_blank" href="{{skype}}">{{skype}}</a></strong></div>{{/if}}
+			{{#if online_reservation_url}}<div class="col-md-12">Online Reservations: <strong><a target="_blank" href="{{online_reservation_url}}">{{online_reservation_url}}</a></strong></div>{{/if}}
+			{{#if mobile_reservation_url}}<div class="col-md-12">Mobile Reservations: <strong><a target="_blank" href="{{mobile_reservation_url}}">{{mobile_reservation_url}}</a></strong></div>{{/if}}
+		</div>
+	</div>
+</div>
+
+<div class="property-meta-section">
+	<div class="row">
+		<div class="col-md-4">Marketing Details</div>
+		<div class="col-md-8">	
+			{{#if marketing_contact_person}}<div class="col-md-12">Contact Person: <strong>{{marketing_contact_person}}</strong></div>{{/if}}
+			{{#if marketing_email_address}}<div class="col-md-12">Marketing Email: <strong><a target="_blank" href="mailto:{{marketing_email_address}}">{{marketing_email_address}}</a></strong></div>{{/if}}
+			{{#if marketing_telephone_number}}<div class="col-md-12">Telephone Number: <strong><a target="_blank" href="tel:{{marketing_telephone_number}}">{{marketing_telephone_number}}</a></strong></div>{{/if}}
+		</div>
+	</div>
+</div>
+
+<div class="property-meta-section">
+	<div class="row">
+		<div class="col-md-4">General Info</div>
+		<div class="col-md-8">
+			{{#if star_authority}}<div class="col-md-6 limited_items item_key_{{@index}}">Star Authority: <strong>{{star_authority}}</strong></div>{{/if}}
+			{{#if from_price}}<div class="col-md-6 limited_items item_key_{{@index}}">From Price: <strong>{{from_price}}</strong></div>{{/if}}
+			{{#if rooms}}<div class="col-md-6 limited_items item_key_{{@index}}">Rooms: <strong>{{rooms}}</strong></div>{{/if}}
+			{{#if stars}}<div class="col-md-6 limited_items item_key_{{@index}}">Stars: <strong>{{stars}}</strong></div>{{/if}}
+			{{#if check_in_time}}<div class="col-md-6 limited_items item_key_{{@index}}">Check-in: <strong>{{check_in_time}}</strong></div>{{/if}}
+			{{#if check_out_time}}<div class="col-md-6 limited_items item_key_{{@index}}">Check-out: <strong>{{check_out_time}}</strong></div>{{/if}}
+			{{#if child_policy}}<div class="col-md-6 limited_items item_key_{{@index}}">Child Policy: <strong>{{child_policy}}</strong></div>{{/if}}
+			{{#if business_hours}}<div class="col-md-6 limited_items item_key_{{@index}}">Business Hours: <strong>{{business_hours}}</strong></div>{{/if}}
+			{{#if gallery_page}}<div class="col-md-6 limited_items item_key_{{@index}}">Gallery Page: <strong>{{gallery_page}}</strong></div>{{/if}}		
+		</div>
+	</div>
+</div>
+
+<div class="property-meta-section">
+	<div class="row">
+		<div class="col-md-4">Social Profiles</div>
+		<div class="col-md-8">
+			<div class="col-md-12">
+				<ul class="social-list">
+					{{#if facebook}}
+						<li><a class="genericon genericon-facebook" href="{{facebook}}" target="_blank"></a></li>
+					{{/if}}
+					{{#if twitter}}
+						<li><a class="genericon genericon-twitter" href="{{twitter}}" target="_blank"></a></li>
+					{{/if}}
+					{{#if linkedin}}
+						<li><a class="genericon genericon-linkedin" href="{{linkedin}}" target="_blank"></a></li>
+					{{/if}}
+					{{#if instagram}}
+						<li><a class="genericon genericon-instagram" href="{{instagram}}" target="_blank"></a></li>
+					{{/if}}
+					{{#if youtube}}
+						<li><a class="genericon genericon-youtube" href="{{youtube}}" target="_blank"></a></li>
+					{{/if}}
+					{{#if google}}
+						<li><a class="genericon genericon-googleplus" href="{{google}}" target="_blank"></a></li>
+					{{/if}}
+					{{#if pinterest}}
+						<li><a class="genericon genericon-pinterest" href="{{pinterest}}" target="_blank"></a></li>
+					{{/if}}
+					{{#if tripadvisor_url}}
+						<li><a class="genericon genericon-tripadvisor" href="{{tripadvisor_url}}" target="_blank">TripAdvisor</a></li>
+					{{/if}}
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+
+{{#if location}}
+<div class="property-meta-section">
+	<div class="row">
+		<div class="col-md-4">Location</div>
+		<div class="col-md-8">
+			{{#if latitude}}<div class="col-md-6 limited_items item_key_{{@index}}">Latitude: <strong>{{latitude}}</strong></div>{{/if}}
+			{{#if longitude}}<div class="col-md-6 limited_items item_key_{{@index}}">Longitude: <strong>{{longitude}}</strong></div>{{/if}}
+			{{#if driving_latitude}}<div class="col-md-6 limited_items item_key_{{@index}}">Driving Latitude: <strong>{{driving_latitude}}</strong></div>{{/if}}
+			{{#if driving_longitude}}<div class="col-md-6 limited_items item_key_{{@index}}">Driving Longitude: <strong>{{driving_longitude}}</strong></div>{{/if}}
+			{{#if closest_town}}<div class="col-md-6 limited_items item_key_{{@index}}">Closest Town: <strong>{{closest_town}}</strong></div>{{/if}}
+			{{#if distance_to_closest_town}}<div class="col-md-6 limited_items item_key_{{@index}}">Distance to Closest Town: <strong>{{distance_to_closest_town}}</strong></div>{{/if}}
+			{{#if directions}}<div class="col-md-12 limited_items item_key_{{@index}}">Directions: <strong>{{directions}}</strong></div>{{/if}}
+		</div>
+	</div>
+</div>
+{{/if}}
+
+<div class="property-meta-section">
+	<div class="row">
+		<div class="col-md-4">Rates</div>
+		<div class="col-md-8">
+			{{#if cost_per_site_}}<div class="col-md-12 limited_items item_key_{{@index}}">Cost per site: <strong>{{cost_per_site_}}</strong></div>{{/if}}
+			{{#if cost_per_person_}}<div class="col-md-12 limited_items item_key_{{@index}}">Cost per person: <strong>{{cost_per_person_}}</strong></div>{{/if}}
+			{{#if cost_per_vehicle_}}<div class="col-md-12 limited_items item_key_{{@index}}">Cost per vehicle: <strong>{{cost_per_vehicle_}}</strong></div>{{/if}}
+			{{#if cost_per_trailer__caravan_}}<div class="col-md-12 limited_items item_key_{{@index}}">Cost per trailer/ caravan: <strong>{{cost_per_trailer__caravan_}}</strong></div>{{/if}}
+			{{#if cost_per_boat_}}<div class="col-md-12 limited_items item_key_{{@index}}">Cost per boat: <strong>{{cost_per_boat_}}</strong></div>{{/if}}
+		</div>
+	</div>
+</div>
+
+{{#if taxonomy.locations}}
+<div class="property-meta-section">
+	<div class="row">
+		<div class="col-md-4">Listed Locations</div>
+		<div class="col-md-8">
+			{{#each taxonomy.locations}}
+			<div class="col-md-6 limited_items item_key_{{@index}}">{{name}}</div>
+			{{/each}}
+		</div>
+	</div>
+</div>
+{{/if}}
+
+{{#if taxonomy.property_type}}
+<div class="property-meta-section">
+	<div class="row">
+		<div class="col-md-4">Listed Types</div>
+		<div class="col-md-8">
+			{{#each taxonomy.property_type}}
+			<div class="col-md-6 limited_items item_key_{{@index}}">{{name}}</div>
+			{{/each}}
+		</div>
+	</div>
+</div>
+{{/if}}
+
+{{#if taxonomy.spoken_languages}}
+<div class="property-meta-section">
+	<div class="row">
+		<div class="col-md-4">Spoken Languages</div>
+		<div class="col-md-8">
+			{{#each taxonomy.spoken_languages}}
+			<div class="col-md-6 limited_items item_key_{{@index}}">{{name}}</div>
+			{{/each}}
+		</div>
+	</div>
+</div>
+
+{{/if}}
+
+
+{{#if taxonomy.special_interests}}
+<div class="property-meta-section">
+	<div class="row">
+		<div class="col-md-4">Special Interests</div>
+		<div class="col-md-8">
+			{{#each taxonomy.special_interests}}
+			<div class="col-md-6 limited_items item_key_{{@index}}">{{name}}</div>
+			{{/each}}
+		</div>
+	</div>
+</div>
+
+{{/if}}
+
+{{#if taxonomy.property_facilities}}
+<div class="property-meta-section">
+	<div class="row">
+		<div class="col-md-4">Property Facilities</div>
+		<div class="col-md-8">
+			{{#each taxonomy.property_facilities}}
+			<div class="col-md-6 limited_items item_key_{{@index}}">{{name}}</div>
+			{{/each}}
+		</div>
+	</div>
+</div>
+
+{{/if}}
+
+{{#if taxonomy.room_facilities}}
+<div class="property-meta-section">
+	<div class="row">
+		<div class="col-md-4">Room Facilities</div>
+		<div class="col-md-8">
+			{{#each taxonomy.room_facilities}}
+			<div class="col-md-6 limited_items item_key_{{@index}}">{{name}}</div>
+			{{/each}}
+		</div>
+	</div>
+</div>
+
+{{/if}}
+
+
+{{#if taxonomy.available_services}}
+<div class="property-meta-section">
+	<div class="row">
+		<div class="col-md-4">Available Services</div>
+		<div class="col-md-8">
+			{{#each taxonomy.available_services}}
+			<div class="col-md-6 limited_items item_key_{{@index}}">{{name}}</div>
+			{{/each}}
+		</div>
+	</div>
+</div>
+
+{{/if}}
+
+
+{{#if taxonomy.activities_on_site}}
+<div class="property-meta-section">
+	<div class="row">
+		<div class="col-md-4">On-Site Activities</div>
+		<div class="col-md-8">
+			{{#each taxonomy.activities_on_site}}
+			<div class="col-md-6 limited_items item_key_{{@index}}">{{name}}</div>
+			{{/each}}
+		</div>
+	</div>
+</div>
+{{/if}}
+
+
+{{#if taxonomy.activities_off_site}}
+<div class="property-meta-section">
+	<div class="row">
+		<div class="col-md-4">Off-Site Activities</div>
+		<div class="col-md-8">
+			{{#each taxonomy.activities_off_site}}
+			<div class="col-md-6 limited_items item_key_{{@index}}">{{name}}</div>
+			{{/each}}
+		</div>
+	</div>
+</div>
+
+{{/if}}
+
+
+{{#if taxonomy.friendly}}
+<div class="property-meta-section">
+	<div class="row">
+		<div class="col-md-4">Friendly</div>
+		<div class="col-md-8">
+			{{#each taxonomy.friendly}}
+			<div class="col-md-6 limited_items item_key_{{@index}}">{{name}}</div>
+			{{/each}}
+		</div>
+	</div>
+</div>
+{{/if}}
+
+
+{{#if media}}
+	{{#if media.0}}
+		{{_image media.0.ID medium}}
+	{{/if}}
+
+	{{#if media.1}}
+		{{_image media.1.ID medium}}
+	{{/if}}
+
+	{{#if media.2}}
+		{{_image media.2.ID medium}}
+	{{/if}}
+{{/if}}
+
+{{#if gallery}}
+	<div class="property-gallery">
+		{{{gallery}}}
+	</div>
+{{/if}}

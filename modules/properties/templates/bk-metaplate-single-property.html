@@ -1,0 +1,243 @@
+{{#if country}}
+<strong>{{#if location}}{{location}}, {{/if}}{{#if area}}{{area}}, {{/if}}{{#if region}}{{region}}{{/if}}, {{country}}</strong>
+{{/if}}
+
+{{#if stars}}
+	<div class="star-rating">{{stars}}</div>
+{{/if}}
+
+{{#if room_count}}
+	<div><strong>{{room_count}}</strong> rooms</div>
+{{/if}}
+
+{{#if content}}
+<h3>About {{post_title}}</h3>
+{{content}}
+
+{{#if child_policy}}
+<div class="child-policy">
+	<p><strong>Children Policy:</strong></p>
+	{{child_policy}}
+</div>
+{{/if}}
+
+<hr>
+
+<div class="contact-details row">
+<div class="general widget col-md-4">
+
+<h4 class="widget-title">General Contact Details</h4>
+
+{{#if front-desk}}
+	<p><span class="genericon genericon-handset"></span>Front Desk: <a href="tel:{{front desk}}"><strong>{{front desk}}</strong></a></p>
+{{/if}}
+
+{{#if facebook_page}}
+	<p><span class="genericon genericon-facebook"></span><a href="{{facebook_page}}"><strong>Facebook</strong></a></p>
+{{/if}}
+
+{{#if twitter_account}}
+	<p><span class="genericon genericon-twitter"></span><a href="{{twitter_account}}"><strong>Twitter</strong></a></p>
+{{/if}}
+	
+</div>
+
+<div class="booking-reservations widget col-md-4">
+
+<h4 class="widget-title">Bookings/Reservations Contact Details</h4>
+
+{{#if telephone_number}}
+	<p><span class="genericon genericon-handset"></span><a href="tel:{{telephone_number}}"><strong>{{telephone_number}}</strong></a></p>
+{{/if}}
+
+{{#if bookings_email}}
+	<p><span class="genericon genericon-mail"></span><a href="mailto:{{bookings_email}}"><strong>{{bookings_email}}</strong></a></p>
+{{/if}}
+
+{{#if skype}}
+	<p><span class="genericon genericon-skype"></span><a href="{{skype}}"><strong>{{skype}}</strong></a></p>
+{{/if}}
+
+{{#if online_reservation_url}}
+	<button href="{{online_reservation_url}}">Book Now</button>
+{{/if}}
+	
+</div>
+
+<div class="marketing-contact-details widget col-md-4">
+
+<h4 class="widget-title">Marketing Contact Details</h4>
+
+{{#if marketing_contact_person}}
+	<p><span class="genericon genericon-user"></span>Contact Person: <strong>{{marketing_contact_person}}</strong></p>
+{{/if}}
+
+{{#if marketing_telephone_number}}
+	<p><span class="genericon genericon-handset"></span><a href="tel:{{marketing_telephone_number}}"><strong>{{marketing_telephone_number}}</strong></a></p>
+{{/if}}
+	
+{{#if marketing_email_address}}
+	<p><span class="genericon genericon-mail"></span><a href="mailto:{{marketing_email_address}}"><strong>{{marketing_email_address}}</strong></a></p>
+{{/if}}
+	
+</div>
+</div>
+
+<div class="collapsibles panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+	
+	{{#if special_interests}}
+		<div class="panel panel-default">
+				<h3><h3><a class="collapsed" data-parent="#accordion" data-toggle="collapse" href="#special-interests" aria-expanded="false" aria-controls="special-interests">Special Interests <span class="genericon genericon-downarrow"></span></a></h3>
+
+				<div id="special-interests" class="panel-collapse collapse" role="tabpanel">
+					{{#each taxonomy.special_interests}} 
+						{{{name}}}{{#unless @last}}, {{/unless}}
+					{{/each}}
+				</div>
+		</div>
+	{{/if}}
+	
+	{{#if available_services}}
+		<div class="panel panel-default">
+			<h3><a class="collapsed" data-parent="#accordion" data-toggle="collapse" href="#available-services" aria-expanded="false" aria-controls="available-services">Available Services<span class="genericon genericon-downarrow"></span></a></h3>
+
+			<div id="available-services" class="panel-collapse collapse" role="tabpanel">
+				{{#each taxonomy.available_services}}
+					{{{name}}}{{#unless @last}}, {{/unless}}
+				{{/each}}
+			</div>
+		</div>
+	{{/if}}
+
+	{{#if activities_on_site}}
+		<div class="panel panel-default">
+			<h3><a class="collapsed" data-parent="#accordion" data-toggle="collapse" href="#activities-on-site" aria-expanded="false" aria-controls="activities-on-site">On-Site Activities 				<span class="genericon genericon-downarrow"></span></a></h3>
+
+			<div id="activities-on-site" class="panel-collapse collapse" role="tabpanel">
+				{{#each taxonomy.activities_on_site}}
+					{{{name}}}{{#unless @last}}, {{/unless}}
+				{{/each}}
+			</div>
+		</div>
+	{{/if}}
+
+	{{#if activities_off_site}}
+		<div class="panel panel-default">
+			<h3><a class="collapsed" data-parent="#accordion" data-toggle="collapse" href="#activities-off-site" aria-expanded="false" aria-controls="activities-off-site">Off-Site Activities 		<span class="genericon genericon-downarrow"></span></a></h3>
+
+			<div id="activities-off-site" class="panel-collapse collapse" role="tabpanel">
+				{{#each taxonomy.activities_off_site}}
+					{{{name}}}{{#unless @last}}, {{/unless}}
+				{{/each}}
+			</div>	
+		</div>
+	{{/if}}
+	
+	{{#if spoken_languages}}
+		<div class="panel panel-default">
+			<h3><a class="collapsed" data-parent="#accordion" data-toggle="collapse" href="#spoken-languages" aria-expanded="false" aria-controls="spoken-languages">Spoken Languages<span class="genericon genericon-downarrow"></span></a></h3>
+
+			<div id="spoken-languages" class="panel-collapse collapse" role="tabpanel">
+				{{#each taxonomy.spoken_languages}}
+					{{{name}}}
+				{{/each}}
+			</div>
+		</div>
+	{{/if}}
+	
+	{{#if property_facilities}}
+		<div class="panel panel-default">
+			<h3><a class="collapsed" data-parent="#accordion" data-toggle="collapse" href="#property-facilities" aria-expanded="false" aria-controls="property-facilities">Property Facilities<span class="genericon genericon-downarrow"></span></a></h3>
+
+			<div id="property-facilities" class="panel-collapse collapse" role="tabpanel">
+				{{#each taxonomy.property_facilities}}
+					{{{name}}}{{#unless @last}}, {{/unless}}
+				{{/each}}
+			</div>
+		</div>
+	{{/if}}
+	
+	{{#if room_facilities}}
+		<div class="panel panel-default">
+			<h3><a class="collapsed" data-parent="#accordion" data-toggle="collapse" href="#room-facilities" aria-expanded="false" aria-controls="room-facilities">Room Facilities<span class="genericon genericon-downarrow"></span></a></h3>
+
+			<div id="room-facilities" class="panel-collapse collapse" role="tabpanel">
+				{{#each taxonomy.room_facilities}}
+					{{{name}}
+				{{/each}}
+			</div>
+		</div>
+	{{/if}}
+	
+	{{#if friendly}}
+	<div class="panel panel-default">
+		<h3><a class="collapsed" data-parent="#accordion" data-toggle="collapse" href="#friendly" aria-expanded="false" aria-controls="friendly">Friendly<span class="genericon genericon-downarrow"></span></a></h3>
+
+		<div id="friendly" class="panel-collapse collapse" role="tabpanel">
+			{{#each taxonomy.friendly}}
+				{{{name}}}{{#unless @last}}, {{/unless}}
+			{{/each}}
+		</div>
+	</div>
+	{{/if}}
+</div>
+
+{{#if connected_offer}}
+	<div class="connected-offers widget">
+		<h3 class="widget-title"><span class="genericon genericon-tag"></span> Offers</h3>
+
+			<div class="offer-slider">
+
+					{{#each connected_offer}}
+
+					<a href="{{guid}}">
+						<div class="slide-container" style="background-image: url({{_image _thumbnail_id thumbnail-wide}});">
+							<div class="caption">
+								<h3 class="slide-title">{{post_title}}</h3>
+								<p class="valid-until">Valid from {{_from_date}} until {{_to_date}}</p>
+							</div>
+						</div>
+					</a>
+
+					{{/each}}
+		</div>
+	</div>
+{{/if}}
+
+{{#if connected_room}}
+	<div class="connected-rooms widget">
+		<h3 class="widget-title"><span class="genericon genericon-home"></span> Rooms</h3>
+
+		<div class="filter-items-wrapper">
+			<div class="filter-items-container lsx-room masonry">
+
+					{{#each connected_room}}
+
+					<article class="room rooms filter-item">
+						<div class="room-content-wrapper">	
+										<div class="room-thumbnail">
+											 <a href="{{guid}}"><img src="{{_image _thumbnail_id thumbnail-wide}}"></a>
+										</div>
+
+								<div class="room-content">
+										<h3><a href="{{guid}}" title="{{post_title}}">{{post_title}}</a></h3>
+
+										<div class="price-wrapper">
+											<span class="price">
+												Price per night from: <span class="price-inner"><span class="hb_currency_tag"><span class="hb_symbol">R</span>{{_from_price}}</span></span>
+											</span>
+										</div>
+
+										<a href="{{guid}}" class="btn btn-primary btn-lg" role="button">View Room</a>
+								</div>
+						</div>
+					</article>
+
+					{{/each}}
+
+					<div class="clearfix"></div>
+
+			</div>
+		</div>
+	</div>
+{{/if}}

@@ -1,0 +1,245 @@
+
+<section id="classy-home-intro" class="classy-home-content-section-wrapper">
+	<div class="lsx-hero-unit">
+		<h1>Welcome to {{property.post_title}}</h1>
+
+		<div class="row">
+			{{#unless no_contact}}
+			<div class="col-md-6">
+				{{{property.excerpt}}}
+			</div>
+			{{else}}
+			<div class="col-md-12">
+				{{{property.post_content}}}
+			</div>
+			{{/unless}}
+			{{#unless no_contact}}
+			<div class="col-md-6">				
+				<h3>Reservations/Bookings Contact:</h3>
+				<ul>
+					{{#if property.telephone_number}}<li><span class="genericon genericon-handset"></span><a href="tel:{{property.telephone_number}}">{{property.telephone_number}}</a></li>{{/if}}
+					{{#if property.bookings_email}}<li><span class="genericon genericon-mail"></span><a href="mailto:{{property.bookings_email}}">{{property.bookings_email}}</a></li>{{/if}}
+					{{#if property.skype}}<li><span class="genericon genericon-skype"></span><a href="skype:{{property.skype}}">{{property.skype}}</a></li>{{/if}}
+				</ul>				
+			</div>
+			{{/unless}}
+		</div>
+	</div>
+</section>
+
+{{#if video_accommodation}}
+<section id="classy-home-video-accommodation" class="classy-home-content-section-wrapper">
+	<div class="row">
+		{{#if video}}
+		<div class="col-md-{{video_accommodation}} classy-home-content-section">
+			<h3>Video</h3>
+			<span>View more <a href="/videos/">here</a></span>
+			<div class="video-slider slick-slider">
+			{{#each video}}
+				<div Style="height:315px;">
+					<iframe width="555" height="314" src="https://www.youtube.com/embed/{{tag}}" frameborder="0" allowfullscreen></iframe>
+				</div>
+			{{/each}}
+			</div>			
+		</div>
+		{{/if}}
+		{{#if room}}
+		<div class="col-md-{{video_accommodation}} classy-home-content-section">
+			<h3>Accommodation</h3>
+
+			<span>View more <a href="/accommodation/">here</a></span>
+
+			<div class="accommodation-slider slick-slider">
+			{{#each room}}
+				<a href="{{permalink}}">
+					<div class="slide-container" style="{{#if image}}background-image: url({{image}});{{else}}background-color:#555;{{/if}}">
+						<div class="caption">
+							<h3 class="slide-title">{{post_title}}</h3>
+						</div>
+					</div>
+				</a>
+			{{/each}}
+			</div>
+
+		</div>
+		{{/if}}
+	</div>
+</section>
+{{/if}}
+{{#if activities_restaurants}}
+<section id="classy-home-activities-restaurants" class="classy-home-content-section-wrapper">
+	<div class="row">
+		{{#if activity}}
+		<div class="col-md-{{activities_restaurants}} classy-home-content-section">
+			<h3>Activities</h3>
+
+			<span>View more <a href="/activities/">here</a></span>
+			
+			<div class="accommodation-slider slick-slider">
+			{{#each activity}}
+				<a href="{{permalink}}">
+					<div class="slide-container" style="{{#if image}}background-image: url({{image}});{{else}}background-color:#555;{{/if}}">
+						<div class="caption">
+							<h3 class="slide-title">{{post_title}}</h3>
+						</div>
+					</div>
+				</a>
+			{{/each}}
+			</div>
+
+		</div>
+		{{/if}}
+
+		{{#if restaurant}}
+		<div class="col-md-{{activities_restaurants}} classy-home-content-section">
+			<h3>Restaurants</h3>
+
+			<span>View more <a href="/restaurants/">here</a></span>
+		
+			<div class="accommodation-slider slick-slider">
+			{{#each restaurant}}
+				<a href="{{permalink}}">
+					<div class="slide-container" style="{{#if image}}background-image: url({{image}});{{else}}background-color:#555;{{/if}}">
+						<div class="caption">
+							<h3 class="slide-title">{{post_title}}</h3>
+						</div>
+					</div>
+				</a>
+			{{/each}}
+			</div>
+
+		</div>
+		{{/if}}
+	</div>
+</section>
+{{/if}}
+
+{{#if offer}}
+<section id="classy-home-offers" class="classy-home-content-section-wrapper">
+	<div class="row">
+		<div class="col-md-8 classy-home-content-section">
+			<h3>Offers</h3>
+
+			<span>View more <a href="/offers/">here</a></span>
+		
+			<div class="accommodation-slider slick-slider">
+			{{#each offer}}
+				<a href="{{permalink}}">
+					<div class="slide-container" style="{{#if image}}background-image: url({{image}});{{else}}background-color:#555;{{/if}}">
+						<div class="caption">
+							<h3 class="slide-title">{{post_title}}</h3>
+							{{#if from}}<p class="valid-until">Valid from {{from}} until {{to}}</p>{{/if}}
+						</div>
+					</div>
+				</a>
+			{{/each}}
+			</div>
+
+		</div>
+	</div>
+</section>
+{{/if}}
+
+{{#if media}}
+<section id="classy-home-gallery" class="classy-home-content-section-wrapper">
+	<div class="row">
+		<div class="col-md-12 classy-home-content-section">
+			<h3>Gallery</h3>
+
+			<span>View the full gallery <a href="">here</a></span>
+
+			<div class="row">
+				<div class="col-sm-4">
+					<a href="#">
+						<img class="lsx-image-border" src="http://mushara.feedmybeta.com/wp-content/uploads/2011/06/03-Villa-Mushara.jpg">
+				</div>
+
+				<div class="col-sm-4">
+					<a href="#">
+						<img class="lsx-image-border" src="http://mushara.feedmybeta.com/wp-content/uploads/2011/06/Game-Drive41-MOP.jpg">
+				</div>
+
+				<div class="col-sm-4">
+					<a href="#">
+						<img class="lsx-image-border" src="http://mushara.feedmybeta.com/wp-content/uploads/2011/06/Game-Drive07-MOP.jpg">
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+{{/if}}
+
+{{#if blog}}
+<section id="classy-home-blog" class="classy-home-content-section-wrapper">
+	<div class="row">
+		<div class="col-md-12 classy-home-content-section">
+			<h3>Blog</h3>
+
+			<span>View more <a href="">here</a></span>
+
+			<div class="lsx-blog-wrapper filter-items-wrapper">
+				<div id="blog-infinite-scroll-wrapper" class="filter-items-container lsx-blog masonry">
+					<article id="post-3489" class="post column-3">
+						<div class="blog-content-wrapper">
+							<div class="blog-thumbnail">
+								<a href="http://mushara.feedmybeta.com/properties/mushara-outpost/">
+									<span class="related-blog-excerpt">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede. Donec nec justo eget felis facilisis...</span>
+									<img class="attachment-responsive wp-post-image lsx-responsive-banner lsx-responsive" src="http://mushara.feedmybeta.com/wp-content/uploads/2015/03/Mushara-Outpost-slider-home-2-350x230.jpg" data-desktop="http://mushara.feedmybeta.com/wp-content/uploads/2015/03/Mushara-Outpost-slider-home-2-350x230.jpg" data-tablet="http://mushara.feedmybeta.com/wp-content/uploads/2015/03/Mushara-Outpost-slider-home-2-350x230.jpg" data-mobile="http://mushara.feedmybeta.com/wp-content/uploads/2015/03/Mushara-Outpost-slider-home-2-350x230.jpg" alt="http://mushara.feedmybeta.com/wp-content/uploads/2015/03/Mushara-Outpost-slider-home-2-350x230">		
+								</a>
+							</div>
+							
+							<div class="blog-content">
+								<h3>
+									<a href="http://mushara.feedmybeta.com/properties/mushara-outpost/" rel="bookmark">
+										<span>Post Title</span>
+									</a>
+								</h3>
+							</div>
+						</div>
+					</article>
+					
+					<article id="post-3489" class="post column-3">
+						<div class="blog-content-wrapper">
+							<div class="blog-thumbnail">
+								<a href="http://mushara.feedmybeta.com/properties/mushara-outpost/">
+									<span class="related-blog-excerpt">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede. Donec nec justo eget felis facilisis...</span>
+									<img class="attachment-responsive wp-post-image lsx-responsive-banner lsx-responsive" src="http://mushara.feedmybeta.com/wp-content/uploads/2015/03/Mushara-Outpost-slider-home-2-350x230.jpg" data-desktop="http://mushara.feedmybeta.com/wp-content/uploads/2015/03/Mushara-Outpost-slider-home-2-350x230.jpg" data-tablet="http://mushara.feedmybeta.com/wp-content/uploads/2015/03/Mushara-Outpost-slider-home-2-350x230.jpg" data-mobile="http://mushara.feedmybeta.com/wp-content/uploads/2015/03/Mushara-Outpost-slider-home-2-350x230.jpg" alt="http://mushara.feedmybeta.com/wp-content/uploads/2015/03/Mushara-Outpost-slider-home-2-350x230">		
+								</a>
+							</div>
+							
+							<div class="blog-content">
+								<h3>
+									<a href="http://mushara.feedmybeta.com/properties/mushara-outpost/" rel="bookmark">
+										<span>Post Title</span>
+									</a>
+								</h3>
+							</div>
+						</div>
+					</article>
+
+					<article id="post-3489" class="post column-3">
+						<div class="blog-content-wrapper">
+							<div class="blog-thumbnail">
+								<a href="http://mushara.feedmybeta.com/properties/mushara-outpost/">
+									<span class="related-blog-excerpt">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede. Donec nec justo eget felis facilisis...</span>
+									<img class="attachment-responsive wp-post-image lsx-responsive-banner lsx-responsive" src="http://mushara.feedmybeta.com/wp-content/uploads/2015/03/Mushara-Outpost-slider-home-2-350x230.jpg" data-desktop="http://mushara.feedmybeta.com/wp-content/uploads/2015/03/Mushara-Outpost-slider-home-2-350x230.jpg" data-tablet="http://mushara.feedmybeta.com/wp-content/uploads/2015/03/Mushara-Outpost-slider-home-2-350x230.jpg" data-mobile="http://mushara.feedmybeta.com/wp-content/uploads/2015/03/Mushara-Outpost-slider-home-2-350x230.jpg" alt="http://mushara.feedmybeta.com/wp-content/uploads/2015/03/Mushara-Outpost-slider-home-2-350x230">		
+								</a>
+							</div>
+							
+							<div class="blog-content">
+								<h3>
+									<a href="http://mushara.feedmybeta.com/properties/mushara-outpost/" rel="bookmark">
+										<span>Post Title</span>
+									</a>
+								</h3>
+							</div>
+						</div>
+					</article>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+{{/if}}
+

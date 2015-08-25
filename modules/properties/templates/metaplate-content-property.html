@@ -1,0 +1,70 @@
+<article id="post-{{ID}}" class="property {{post_class}}">
+	<div class="property-content-wrapper">
+		{{#if post_thumbnail}}
+			<div class="property-thumbnail">
+				<a href="{{permalink}}">
+					{{{post_thumbnail}}}
+				</a>
+			</div>
+		{{/if}}
+
+		<div class="property-content">
+			<div class="property-top">
+				<h3><a href="{{permalink}}" rel="bookmark" title="{{the_title_attribute}}"><span>{{post_title}}</span></a></h3>
+				
+				<div>
+					<span class="property-location">
+						{{#if area}}<span>{{area}}</span>{{/if}}{{#if region}}<span>, {{region}}</span>{{/if}}					
+					</span>
+					
+					<div class='stars'>
+						{{#is stars 1}}
+							<span class='genericon genericon-rating-full'></span>
+						{{/is}}
+						{{#is stars 2}}
+							<span class='genericon genericon-rating-full'></span>
+							<span class='genericon genericon-rating-full'></span>
+						{{/is}}
+						{{#is stars 3}}
+							<span class='genericon genericon-rating-full'></span>
+							<span class='genericon genericon-rating-full'></span>
+							<span class='genericon genericon-rating-full'></span>
+						{{/is}}
+						{{#is stars 4}}
+							<span class='genericon genericon-rating-full'></span>
+							<span class='genericon genericon-rating-full'></span>
+							<span class='genericon genericon-rating-full'></span>
+							<span class='genericon genericon-rating-full'></span>
+						{{/is}}
+						{{#is stars 5}}
+							<span class='genericon genericon-rating-full'></span>
+							<span class='genericon genericon-rating-full'></span>
+							<span class='genericon genericon-rating-full'></span>
+							<span class='genericon genericon-rating-full'></span>
+							<span class='genericon genericon-rating-full'></span>
+						{{/is}}
+					</div>
+				</div>
+			</div>
+			{{#if accommodation_from.rate_type}}
+				{{#if accommodation_from.price_view}}
+				<div class="price-wrapper">
+					<span class="price">
+						Price {{accommodation_from.rate_type}} from:
+						<span class="price-inner">
+							{{{accommodation_from.price_view}}}
+						</span>
+					</span>
+				</div>
+				{{/if}}
+			{{/if}}
+
+			<p class="property-excerpt">{{{excerpt}}}</p>
+
+			<div class="property-bottom">
+				<span class="property-country">{{#if country}}<span class="genericon genericon-location"></span> {{country}}{{/if}}</span>
+				<a href="{{permalink}}" class="property-read-more" role="button">Read More</a>
+			</div>
+		</div>
+	</div>
+</article>

@@ -1,0 +1,143 @@
+<div id="post-{{ID}}">
+
+	{{#each connected_room}}
+		<div class="accommodation-content-wrapper">	
+			<div class="property-content">				
+				<div class="accommodation-top" style="border-bottom:0;">
+					<h3><a title="{{post_title}}" href="{{permalink}}">{{post_title}}</a></h3>
+					
+					<div>
+
+						<span class="connected-property">{{../post_title}}</span>
+
+					</div>
+				</div>
+
+				<div class="accommodation-tabs" role="tabpanel">	
+					<ul class="nav nav-tabs" style="padding: 0px 2px;">
+						{{#if rates}}<li class="active"><a href="#rates-{{ID}}">Rates</a></li>{{/if}}
+						{{#if misc_rate}}<li><a href="#misc_rate-{{ID}}">Misc Rates</a></li>{{/if}}
+						{{#if booking_conditions}}<li><a href="#conditions-{{ID}}">Booking Conditions</a></li>{{/if}}
+						{{#if cancellation_policy}}<li><a href="#cancellation_policy-{{ID}}">Cancellation Policy</a></li>{{/if}}
+
+					</ul>
+
+					{{#if rates}}
+						<div class="tab-content">
+					{{else}}
+						{{#if booking_conditions}}
+							<div class="tab-content">
+						{{else}}
+							{{#if cancellation_policy}}
+								<div class="tab-content">
+							{{/if}}
+						{{/if}}
+					{{/if}}
+
+						{{#if rates}}
+						<div role="tabpanel" class="tab-pane active" id="rates-{{ID}}">
+							<table class="fullwidth">
+								<thead>
+									<tr>
+										<th>
+											Rate
+										</th>
+										<th>
+											Starts - Ends
+										</th>
+										<th style="text-align: right;">
+											Price
+										</th>
+									</tr>
+								</thead>
+								<tbody>
+								{{#each rates}}
+									<tr>
+										<td>
+											{{group_name}}
+										</td>			
+										<td>
+											{{start_date}} - {{end_date}}
+										</td>
+										<td style="text-align: right;">
+											{{{price}}}
+										</td>
+									</tr>
+								{{/each}}
+								</tbody>
+							</table>
+						</div>
+						{{/if}}
+
+						{{#if misc_rate}}
+						<div role="tabpanel" class="tab-pane" id="misc_rate-{{ID}}">
+							<table class="fullwidth">
+								<thead>
+									<tr>
+										<th>
+											Rate
+										</th>
+										<th>
+											Starts - Ends
+										</th>
+										<th style="text-align: right;">
+											Price
+										</th>
+									</tr>
+								</thead>
+								<tbody>
+								{{#each misc_rate}}
+									<tr>
+										<td>
+											{{group_name}}
+										</td>			
+										<td>
+											{{start_date}} - {{end_date}}
+										</td>
+										<td style="text-align: right;">
+											{{{price}}}
+										</td>
+									</tr>
+								{{/each}}
+								</tbody>
+							</table>
+						</div>
+						{{/if}}
+
+						
+						{{#if booking_conditions}}
+						<div role="tabpanel" class="tab-pane" id="conditions-{{ID}}" style="padding: 10px 20px;">{{{booking_conditions}}}</div>
+						{{/if}}
+
+						{{#if cancellation_policy}}
+						<div role="tabpanel" class="tab-pane" id="cancellation_policy-{{ID}}" style="padding: 10px 20px;">{{{cancellation_policy}}}</div>
+						{{/if}}
+
+
+
+					{{#if rates}}
+						</div>
+					{{else}}
+						{{#if booking_conditions}}
+							</div>
+						{{else}}
+							{{#if cancellation_policy}}
+								</div>
+							{{/if}}
+						{{/if}}
+					{{/if}}
+
+				</div>
+			</div>
+		</div>
+	{{/each}}
+
+	<script type="text/javascript">
+	jQuery( function( $ ){
+		$('.nav-tabs a').click(function (e) {
+			e.preventDefault()
+			$(this).tab('show')
+		})
+	})
+	</script>
+</div>

@@ -1,0 +1,21 @@
+<article id="post-{{ID}}" class="{{post_class}} related-accommodation">
+	<div class="accommodation-content-wrapper">	
+		{{#if post_thumbnail}}
+			<div class="accommodation-thumbnail">
+				<a href="{{the_permalink}}">
+				{{{post_thumbnail}}}
+				</a>
+			</div>
+		{{/if}}
+		
+		<div class="accommodation-content">
+			<h3><a href="{{the_permalink}}" title="{{the_title_attribute}}">{{post_title}}</a></h3>
+			
+			{{{happybeds_accommodation_price}}}
+
+			{{post_excerpt}}
+
+			{{{happybeds_accommodation_button}}}
+		</div>
+	</div>
+</article>
