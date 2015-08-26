@@ -128,11 +128,11 @@ class Lsx {
 		// do activation
 		$modules = apply_filters( 'lsx_get_modules', $modules );
 		foreach( $modules as $module ){
-			if( !empty( $lsx['active_module'][ $file ] ) || empty( $module['Internal'] ) ){
+			//if( !empty( $lsx['active_module'][ $file ] ) || empty( $module['Internal'] ) ){
 				if( file_exists( $module['file'] ) ){
 					include_once $module['file'];
 				}
-			}
+			//}
 		}
 		return $modules;
 	}

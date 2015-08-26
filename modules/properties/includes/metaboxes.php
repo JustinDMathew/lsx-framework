@@ -69,7 +69,7 @@ $metabox['fields'] 		= array(
 	'province'				=>	array( 'label' => 'Province' ),
 	'region'				=>	array( 'label' => 'Region' ),
 	'area'					=>	array( 'label' => 'Area' ),
-	'country'				=>	array( 'label' => 'Country' ),
+	'country'				=>	array( 'label' => 'Country', 'type' => 'country', 'repeatable' => true ),
 	'closest_town'			=>	array( 'label' => 'Closest Town' ),
 	'distance_to_closest_town'=>	array( 'label' => 'Distance to Closest Town' ),
 	'directions'			=>	array( 'label' => 'Directions', 'type' => 'textarea' ),	

@@ -108,7 +108,7 @@ class Lsx_Tours extends Lsx {
 		
 		
 		$options = Lsx_Options::get_single( 'lsx' );
-		if( false !== $options && is_array($options['lsx-tours']) ){
+		//if( false !== $options && is_array($options['lsx-tours']) ){
 				
 			if(isset($options['lsx-tours']['enquire_form']) && '' != $options['lsx-tours']['enquire_form']){
 				$this->enquire_form = $options['lsx-tours']['enquire_form'];
@@ -119,7 +119,7 @@ class Lsx_Tours extends Lsx {
 			if(isset($options['lsx-tours']['google_api_key']) && '' != $options['lsx-tours']['google_api_key']){
 				$this->google_api_key = $options['lsx-tours']['google_api_key'];
 			}			
-		}
+		//}
 	}
 	
 	

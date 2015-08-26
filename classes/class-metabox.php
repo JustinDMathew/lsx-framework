@@ -97,6 +97,16 @@ class Lsx_Metabox {
 			'select'		=>	array(
 				'file'		=>	LSX_PATH . 'includes/fields/select/field.php',
 			),
+			'country'		=>	array(
+				'file'		=>	LSX_PATH . 'includes/fields/country/field.php',
+				'styles'	=> array(
+					LSX_URL . 'includes/fields/country/select2.css',
+				),
+				'scripts'	=> array(
+					LSX_URL . 'includes/fields/country/select2.min.js',
+				),
+
+			),
 			'geo'			=>	array(
 				'file'		=>	LSX_PATH . 'includes/fields/geo/field.php',
 			),
