@@ -58,6 +58,7 @@ $metabox 				= $property_info_base;
 $metabox['post_type']	= 	array('property','accommodation','offers','restaurant', 'activity');
 $metabox['id'] 			= 'location';
 $metabox['panel'] 		= __( 'Location', 'lsx' );
+$metabox['repeatable']	= true;
 $metabox['fields'] 		= array(
 	'geolocation'			=>	array( 'label' => 'Geolocation', 'type' => 'geo' ),
 	'latitude'				=>	array( 'label' => 'Latitude' ),
@@ -69,7 +70,7 @@ $metabox['fields'] 		= array(
 	'province'				=>	array( 'label' => 'Province' ),
 	'region'				=>	array( 'label' => 'Region' ),
 	'area'					=>	array( 'label' => 'Area' ),
-	'country'				=>	array( 'label' => 'Country', 'type' => 'country', 'repeatable' => true ),
+	'country'				=>	array( 'label' => 'Country', 'type' => 'country'),
 	'closest_town'			=>	array( 'label' => 'Closest Town' ),
 	'distance_to_closest_town'=>	array( 'label' => 'Distance to Closest Town' ),
 	'directions'			=>	array( 'label' => 'Directions', 'type' => 'textarea' ),	

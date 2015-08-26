@@ -37,14 +37,13 @@
 							echo '<button class="button lsx-remove-repeatable" ' . $confirm . ' data-remove-parent="#lsx-group-{{_id}}-part-' . $part_id. '" type="button"><span class="dashicons dashicons-no-alt"></span></button>';
 							
 							//Output a collapse button
-							echo '<button class="button lsx-collapse-repeatable lsx-collapse-up" type="button"><span class="dashicons dashicons-arrow-up"></span></button>';
-							echo '<button class="button lsx-collapse-repeatable lsx-collapse-down" type="button"><span class="dashicons dashicons-arrow-down"></span></button>';
+							echo '<label class="button lsx-collapse-repeatable"><input style="display:none;" type="checkbox" name="{{:name}}[open]" value="1" data-live-sync="true" {{#if open}}checked="checked"{{/if}}><span class="dashicons {{#if open}}dashicons-arrow-up{{else}}dashicons-arrow-down{{/if}}"></span></label>';
 							
 							//Output a title for the collapsable part
 							echo '<div class="lsx-group-collapsable-title" data-item-title="'.apply_filters('lsx_metabox_collapsable_panel_title',__('Item','lsx'),$part).'"></div>';
 							
 							//Output a wrapper so we can collapse the fields
-							echo '<div class="lsx-group-collapsable-wrapper">';
+							echo '<div class="{{#unless open}}lsx-group-collapsable-wrapper{{/unless}}">';
 						}
 						$field_types = apply_filters( 'lsx_metabox_field_types', array() );
 						
@@ -78,7 +77,7 @@
 										}
 									?>
 
-										{{:node_point}}								
+										{{:node_point}}
 										<?php
 										include $field_types[ $field['type'] ]['file'];
 										?>
@@ -97,6 +96,7 @@
 								}
 
 							}
+
 						}
 						
 						if( !empty( $part['repeatable'] ) ){

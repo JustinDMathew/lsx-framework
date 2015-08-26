@@ -3831,29 +3831,21 @@ var __module0__ = (function(__dependency1__, __dependency2__, __dependency3__, _
   
   $.fn.formJSON = function(){
     var form = $(this);
-    if( !form.is('form') ){
-      form = $('<form>').append( form.clone() );
-    }
-    var fields       = form.serializeArray(),
+
+    var fields       = form.find('[name]'),
         json         = {},
         arraynames   = {};
     for( var v = 0; v < fields.length; v++){
-      var field     = fields[v],
-        field_el = form.find('[name="' + field.name + '"]'),
-        name    = field.name.replace(/\]/gi,'').split('['),
-        value     = field.value,
+      var field     = $( fields[v] ),
+        name    = field.prop('name').replace(/\]/gi,'').split('['),
+        value     = field.val(),
         lineconf  = {};
-
-      /*if( field_el.prop('required') && field_el.is(':visible') ){
-        if( field_el[0].checkValidity ){
-          if( field_el[0].checkValidity() ){
-            field_el.removeClass('invalid');            
-          }else{
-            field_el.focus().addClass('invalid');  
-            return false;         
+        if( field.is('radio') || field.is('checkbox') ){
+          if( !field.is(':checked') ){
+            continue;
           }
-        }        
-      }*/
+        }
+
       for(var i = name.length-1; i >= 0; i--){
         var nestname = name[i];
         if(nestname.length === 0){
@@ -3866,18 +3858,20 @@ var __module0__ = (function(__dependency1__, __dependency2__, __dependency3__, _
           nestname = arraynames[name[i-1]];
         }
         if(i === name.length-1){
-          if( value === 'true' ){
-            value = true;
-          }else if( value === 'false' ){
-            value = false;
-          }else if( !isNaN( parseFloat( value ) ) && parseFloat( value ).toString() === value ){
-            value = parseFloat( value );
-          }else if( value.substr(0,1) === '{' || value.substr(0,1) === '[' ){
-            try {
-              value = JSON.parse( value );
+          if( value ){
+            if( value === 'true' ){
+              value = true;
+            }else if( value === 'false' ){
+              value = false;
+            }else if( !isNaN( parseFloat( value ) ) && parseFloat( value ).toString() === value ){
+              value = parseFloat( value );
+            }else if( value.substr(0,1) === '{' || value.substr(0,1) === '[' ){
+              try {
+                value = JSON.parse( value );
 
-            } catch (e) {
-              //console.log( e );
+              } catch (e) {
+                //console.log( e );
+              }
             }
           }
           lineconf[nestname] = value;
